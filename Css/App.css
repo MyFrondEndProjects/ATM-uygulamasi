@@ -8,7 +8,7 @@
 {
     position:Absolute;
     top:10%;
-    left:20%;
+    left:25%;
     width:40%;
     height:84%;
     background-color:black;
@@ -32,7 +32,7 @@
     width:15.5em;
     height:12.6em;
     background-color:#E0FFFF;
-    left:27%;
+    left:32%;
     top:38.5%;
     opacity:0.8;
 }
@@ -42,7 +42,7 @@
     width:15.5em;
     height:12.6em;
     background-color:black;
-    right:20%;
+    right:10%;
     top:11%;
 }
 .Offbutton
@@ -69,7 +69,7 @@
     left:1%;
     font-family:monospace;
     text-align:center;
-    background-color:#FFE4B5;
+    background-color:#E0FFFF;
     opacity:0.8;
     font-size:16px;
     border-radius:0.5em;
@@ -80,7 +80,70 @@
     position:absolute;
     width:15.5em;
     height:12.6em;
-    background-color:#E0FFFF;
+    background-color:#90EE90;
    
     opacity:0.8;
+}
+.kartnumarasi
+{
+    position:absolute;
+    bottom:19%;
+    left:35%;
+    width:20em;
+    height:1.9em;
+    border-radius:0.5em;
+    background-color:#90EE90;
+}
+.sifre
+{
+    position:absolute;
+    bottom:14%;
+    left:35%;
+    width:20em;
+    height:1.9em;
+    border-radius:0.5em;
+    background-color:#90EE90;
+}
+.girisbuton
+{
+    position:absolute;
+    bottom:9%;
+    left:43.5%;
+    width:10em;
+    height:1.7em;
+    border-radius:0.5em;
+    text-align:center;
+    background-color:#90EE90;
+    
+}
+.girisbuton:hover
+{
+    position:absolute;
+    bottom:9%;
+    left:43.5%;
+    width:10em;
+    height:1.8em;
+    border-radius:0.5em;
+    text-align:center;
+    color:white;
+}
+.Kartno
+{
+    position:absolute;
+    top:77.9%;
+    left:27%;
+    font-family:monospace;
+    color:#90EE90;
+    font-weight:bolder;
+    font-size:1.2em;
+}
+.Pass
+{
+    position:absolute;
+    top:83%;
+    left:31.3%;
+    font-family:monospace;
+    color:#90EE90;
+    font-weight:bolder;
+    font-size:1.2em;
 }
