@@ -53,11 +53,34 @@
     top:38%;
     left:35%;
 }
-.Onbutton
+.ActiveButon
 {
     position:absolute;
     width:4em;
     height:4em;
     top:38%;
     left:35%;
+}
+.Walcome-text
+{
+    position:absolute;
+    color:black;
+    top:40%;
+    left:1%;
+    font-family:monospace;
+    text-align:center;
+    background-color:#FFE4B5;
+    opacity:0.8;
+    font-size:16px;
+    border-radius:0.5em;
+    
+}
+.Walcome
+{
+    position:absolute;
+    width:15.5em;
+    height:12.6em;
+    background-color:#E0FFFF;
+   
+    opacity:0.8;
 }
