@@ -1,0 +1,63 @@
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.container
+{
+    position:Absolute;
+    top:10%;
+    left:20%;
+    width:40%;
+    height:84%;
+    background-color:black;
+    opacity:0.9;
+    border-radius:1.5em;
+}
+.Atm
+{
+    Position:absolute;
+    position:Absolute;
+    top:0.9%;
+    left:1%;
+    width:98%;
+    height:98%;
+    opacity:none;
+    border-radius:1.5em;
+}
+.blackpanel
+{
+    position:absolute;
+    width:15.5em;
+    height:12.6em;
+    background-color:#E0FFFF;
+    left:27%;
+    top:38.5%;
+    opacity:0.8;
+}
+.activepanel
+{
+    position:Absolute;
+    width:15.5em;
+    height:12.6em;
+    background-color:black;
+    right:20%;
+    top:11%;
+}
+.Offbutton
+{
+    position:absolute;
+    width:4em;
+    height:4em;
+    top:38%;
+    left:35%;
+}
+.Onbutton
+{
+    position:absolute;
+    width:4em;
+    height:4em;
+    top:38%;
+    left:35%;
+}
