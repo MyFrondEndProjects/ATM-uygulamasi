@@ -10,7 +10,16 @@ let activepanel=document.querySelector("#Loginform");
 const data =[
     {
         Kartnumarası:"123",
-        sifre:"12345678910",
+        sifre:"123",
+        isim:"Mustafa",
+
+
+        bakiye:3000,
+        borc:3000,
+        asgaritutar:0,
+        kredikartinakitavans:0,
+
+        
     }
 ]
 function active ()
@@ -58,11 +67,24 @@ function giris()
     {
          if(kartnumarasi.value==data[i].Kartnumarası && sifre.value==data[i].sifre)
          {
-             alert("Giriş başarılı");
+            walcomeimg.src="";
+
+
+           let text=document.createElement("p");
+           text.classList.add("Walcome-text");
+           text.style.marginLeft="20px";
+           blackpanel.appendChild(text);
+           text.textContent="Hosgeldiniz Mustafa bey"
+           setTimeout(() => {text.remove()},3000);
+
+         
+
+
          }
        else
        {
         alert("Kart numarası ya da sifre hatalı");
+       
        }
     }
 }

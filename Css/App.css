@@ -35,6 +35,7 @@
     left:32%;
     top:38.5%;
     opacity:0.8;
+  
 }
 .activepanel
 {
@@ -146,4 +147,13 @@
     color:#90EE90;
     font-weight:bolder;
     font-size:1.2em;
+}
+.bakiyebtn
+{
+    position:absolute;
+    top:50%;
+    height:1.8em;
+    width:8em;
+    border-radius:0;
+    background-color:#FFFAFA;
 }
