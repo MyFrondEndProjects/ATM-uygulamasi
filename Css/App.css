@@ -65,15 +65,15 @@
 .Walcome-text
 {
     position:absolute;
-    color:black;
+    color:#90EE90;
     top:40%;
-    left:1%;
+    left:0.5%;
     font-family:monospace;
     text-align:center;
-    background-color:#E0FFFF;
-    opacity:0.8;
+    background-color:black;
+    opacity:0.6;
     font-size:16px;
-    border-radius:0.5em;
+    border-radius:0.1em;
     
 }
 .Walcome
@@ -81,7 +81,7 @@
     position:absolute;
     width:15.5em;
     height:12.6em;
-    background-color:#90EE90;
+    background-color:#87CEEB;
    
     opacity:0.8;
 }
@@ -151,9 +151,145 @@
 .bakiyebtn
 {
     position:absolute;
-    top:50%;
+    top:49%;
     height:1.8em;
     width:8em;
-    border-radius:0;
-    background-color:#FFFAFA;
+    border-radius:1px;
+    background-color:#87CEEB;
+    color:darkgreen;
+    opacity:0.9;
+    
+}
+.bakiyebtn:hover
+{
+    position:absolute;
+    top:49%;
+    height:1.8em;
+    width:8em;
+    border-radius:1px;
+    background-color:#00FF7F;
+    color:white;
+    opacity:0.9;
+    
+}
+.borcbtn
+{
+    position:absolute;
+    top:61.5%;
+    height:1.8em;
+    width:8em;
+    border-radius:1px;
+    background-color:#87CEEB;
+    color:darkgreen;
+    opacity:0.9;
+}
+.borcbtn:hover
+{
+    position:absolute;
+    top:61.5%;
+    height:1.8em;
+    width:8em;
+    border-radius:1px;
+    background-color:#00FF7F;
+    color:white;
+    opacity:0.9;
+}
+.asgaritutarbtn
+{
+    position:absolute;
+    top:49%;
+    right:1.5%;
+    height:1.8em;
+    width:8em;
+    border-radius:1px;
+    background-color:#87CEEB;
+    color:darkgreen;
+    opacity:0.9;
+}
+.asgaritutarbtn:hover
+{
+    position:absolute;
+    top:49%;
+    right:1.5%;
+    height:1.8em;
+    width:8em;
+    border-radius:1px;
+    background-color:#00FF7F;
+    color:white;
+    opacity:0.9;
+}
+.nakitavansbtn
+{
+    position:absolute;
+    top:61.5%;
+    right:1.5%;
+    height:1.8em;
+    width:8em;
+    border-radius:1px;
+    background-color:#87CEEB;
+    color:darkgreen;
+    opacity:0.9;
+}
+.nakitavansbtn:hover
+{
+    position:absolute;
+    top:61.5%;
+    right:1.5%;
+    height:1.8em;
+    width:8em;
+    border-radius:1px;
+    background-color:#00FF7F;
+    color:white;
+    opacity:0.9;
+}
+.Bakiyesorgulabtn
+{
+    position:absolute;
+    top:75%;
+    right:1.5%;
+    height:1.8em;
+    width:8em;
+    border-radius:1px;
+    background-color:#87CEEB;
+    color:darkgreen;
+    opacity:0.9;
+}
+.Bakiyesorgulabtn:hover
+{
+    position:absolute;
+    top:75%;
+    right:1.5%;
+    height:1.8em;
+    width:8em;
+    border-radius:1px;
+    background-color:#00FF7F;
+    color:white;
+    opacity:0.9;
+}
+.Geri
+{
+    position:absolute;
+    top:155%;
+    left:29%;
+    width:5em;
+    height:3em;
+    background-color:rgba(7, 80, 35, 0.795);
+    color:white;
+    text-align:center;
+    font-size:1em;
+}
+.information
+{
+    position:absolute;
+    top:140%;
+    font-size:1em;
+    left:1em;
+    color:darkgreen;
+    font-weight: bolder;
+    border:4px solid rgba(7, 80, 35, 0.795);
+}
+.isimsoyisim
+{
+    position:absolute;
+    color:black;
 }

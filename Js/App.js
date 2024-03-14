@@ -12,14 +12,12 @@ const data =[
         Kartnumarası:"123",
         sifre:"123",
         isim:"Mustafa",
-
-
-        bakiye:3000,
-        borc:3000,
+        bakiye:4000,
+        borc:2000,
         asgaritutar:0,
-        kredikartinakitavans:0,
+        nakitavans:0,
+        kalankullanımhakkı:0
 
-        
     }
 ]
 function active ()
@@ -61,6 +59,8 @@ Loginform.appendChild(girisbuton);
 Loginform.appendChild(Kartno);
 Loginform.appendChild(Pass);
 
+
+
 function giris()
 {
     for(let i=0; i<data.length; i++)
@@ -73,13 +73,90 @@ function giris()
            let text=document.createElement("p");
            text.classList.add("Walcome-text");
            text.style.marginLeft="20px";
-           blackpanel.appendChild(text);
-           text.textContent="Hosgeldiniz Mustafa bey"
-           setTimeout(() => {text.remove()},3000);
-
          
+           kartnumarasi.value="";
+           sifre.value="";
+           
 
 
+           let  bakiyebtn=document.createElement("button");
+           bakiyebtn.classList.add("bakiyebtn");
+           bakiyebtn.textContent="Bakiye";
+
+           let  borcbtn=document.createElement("button");
+           borcbtn.classList.add("borcbtn");
+           borcbtn.textContent="Toplam borc";
+
+           let asgaritutarbtn=document.createElement("button");
+           asgaritutarbtn.classList.add("asgaritutarbtn");
+           asgaritutarbtn.textContent="Asgari tutar";
+
+
+           let nakitavansbtn =document.createElement("button");
+           nakitavansbtn.classList.add("nakitavansbtn");
+           nakitavansbtn.textContent="Nakit avans";
+
+           let Bakiyesorgulabtn=document.createElement("button");
+           Bakiyesorgulabtn.classList.add("Bakiyesorgulabtn");
+           Bakiyesorgulabtn.textContent="Bakiye sorgula";
+
+
+           blackpanel.appendChild(text);
+           blackpanel.appendChild(bakiyebtn);
+           blackpanel.appendChild(borcbtn);
+           blackpanel.appendChild(asgaritutarbtn);
+           blackpanel.appendChild(nakitavansbtn);
+           blackpanel.appendChild(Bakiyesorgulabtn);
+
+
+
+
+
+
+
+           const bakiyesorgula = () => 
+           {
+            bakiyebtn.remove();
+            borcbtn.remove();
+            asgaritutarbtn.remove();
+            nakitavansbtn.remove();
+            Bakiyesorgulabtn.remove();
+
+            let text=document.createElement("p");
+            text.classList.add("Walcome-text");
+            text.textContent="Hesaptaki bakiyeniz:"+data[i].bakiye+" TL ";
+            text.style.marginLeft="0.2em";
+            kartnumarasi.remove();
+            sifre.remove();
+            Kartno.remove();
+            Pass.remove();
+            girisbuton.remove();
+
+
+
+            let geri=document.createElement("button");
+            geri.classList.add("Geri");
+            geri.textContent="Çıkış yap";
+
+            let information=document.createElement("p");
+            information.classList.add("information");
+            information.textContent="Güle güle tekrar bekleriz";
+
+            blackpanel.appendChild(text);
+            blackpanel.appendChild(geri);
+            blackpanel.appendChild(information);
+
+
+              const geridon = () => 
+              {
+                location.reload();
+              }
+            geri.addEventListener('click',geridon);
+           }
+
+
+
+           Bakiyesorgulabtn.addEventListener("click", bakiyesorgula);
          }
        else
        {
