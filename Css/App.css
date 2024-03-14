@@ -12,7 +12,7 @@
     width:40%;
     height:84%;
     background-color:black;
-    opacity:0.9;
+   
     border-radius:1.5em;
 }
 .Atm
@@ -29,7 +29,7 @@
 .blackpanel
 {
     position:absolute;
-    width:15.5em;
+    width:247px;
     height:12.6em;
     background-color:#E0FFFF;
     left:32%;
@@ -292,4 +292,6 @@
 {
     position:absolute;
     color:black;
+    top:0.2em;
+    left:0.3em;
 }

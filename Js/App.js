@@ -5,13 +5,15 @@ let walcomeimg=document.querySelector(".Walcome");
 let Loginform=document.querySelector("#Loginform");
 let blackpanel=document.querySelector(".blackpanel");
 let activepanel=document.querySelector("#Loginform");
+let activepanel1=document.querySelector("activepanel ");
+let adsoyad=document.querySelector(".isimsoyisim");
 
 
 const data =[
     {
         Kartnumarası:"123",
         sifre:"123",
-        isim:"Mustafa",
+        isimsoyisim:"Mustafa",
         bakiye:4000,
         borc:2000,
         asgaritutar:0,
@@ -66,9 +68,11 @@ function giris()
 {
     for(let i=0; i<data.length; i++)
     {
+
          if(kartnumarasi.value==data[i].Kartnumarası && sifre.value==data[i].sifre)
          {
-            walcomeimg.src="";
+          
+            walcomeimg.remove();
 
 
            let text=document.createElement("p");
@@ -154,7 +158,7 @@ function giris()
 
               const geridon = () => 
               {
-                location.reload();
+                
               }
             geri.addEventListener('click',geridon);
            }
@@ -201,7 +205,10 @@ function giris()
 
              const geridon = () => 
               {
-                location.reload();
+                active ();
+                text.remove();
+                geri.remove();
+                information.remove();
               }
             geri.addEventListener('click',geridon);
 
@@ -236,6 +243,16 @@ function giris()
            information.classList.add("information");
            information.textContent="Güle güle tekrar bekleriz";
 
+
+           const cikis=() => 
+           {
+            active ();
+                text.remove();
+                geri.remove();
+                information.remove();
+           }
+
+           geri.addEventListener('click',cikis);
            blackpanel.appendChild(text);
            blackpanel.appendChild(geri);
            blackpanel.appendChild(information);
@@ -300,18 +317,10 @@ function Off()
         Loginform.removeChild(Loginform.firstChild); 
         
     }
-    Onbutton.remove();
     
-     let activebutton=document.createElement("a");
-     activebutton.classList.add("Onbutton");
-     
-     let imgbuton=document.createElement("img");
-     imgbuton.classList="ActiveButon";
-     imgbuton.src="İmg/Onbutton.png";
+    location.reload();
 
      
-
-     location.reload();
 }
 
 
