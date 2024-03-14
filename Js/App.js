@@ -16,7 +16,8 @@ const data =[
         borc:2000,
         asgaritutar:0,
         nakitavans:0,
-        kalankullanımhakkı:0
+        kalankullanımhakkı:0,
+        nakitavanslimit:0
 
     }
 ]
@@ -109,7 +110,11 @@ function giris()
            blackpanel.appendChild(Bakiyesorgulabtn);
 
 
-
+           kartnumarasi.remove();
+           sifre.remove();
+           Kartno.remove();
+           Pass.remove();
+           girisbuton.remove();
 
 
 
@@ -156,7 +161,123 @@ function giris()
 
 
 
+
+
+
+          const Borcsorgula=() =>
+          {
+            bakiyebtn.remove();
+            borcbtn.remove();
+            asgaritutarbtn.remove();
+            nakitavansbtn.remove();
+            Bakiyesorgulabtn.remove();
+
+            let text=document.createElement("p");
+            text.classList.add("Walcome-text");
+            text.textContent="Toplam borcunuz:"+data[i].borc+" TL ";
+            text.style.marginLeft="0.2em";
+            kartnumarasi.remove();
+            sifre.remove();
+            Kartno.remove();
+            Pass.remove();
+            girisbuton.remove();
+
+
+
+            let geri=document.createElement("button");
+            geri.classList.add("Geri");
+            geri.textContent="Çıkış yap";
+
+            let information=document.createElement("p");
+            information.classList.add("information");
+            information.textContent="Güle güle tekrar bekleriz";
+
+            blackpanel.appendChild(text);
+            blackpanel.appendChild(geri);
+            blackpanel.appendChild(information);
+
+
+
+
+             const geridon = () => 
+              {
+                location.reload();
+              }
+            geri.addEventListener('click',geridon);
+
+          }
+
+
+          const Nakitavans=() =>
+          {
+            bakiyebtn.remove();
+            borcbtn.remove();
+            asgaritutarbtn.remove();
+            nakitavansbtn.remove();
+            Bakiyesorgulabtn.remove();
+
+            let text=document.createElement("p");
+            text.classList.add("Walcome-text");
+            text.textContent="Nakit avans çekebileceğiniz miktar:"+data[i].nakitavans+" TL ";
+            text.style.marginLeft="0.2em";
+            kartnumarasi.remove();
+            sifre.remove();
+            Kartno.remove();
+            Pass.remove();
+            girisbuton.remove();
+ 
+           data[i].nakitavans=data[i].kalankullanımhakkı;
+
+           let geri=document.createElement("button");
+           geri.classList.add("Geri");
+           geri.textContent="Çıkış yap";
+
+           let information=document.createElement("p");
+           information.classList.add("information");
+           information.textContent="Güle güle tekrar bekleriz";
+
+           blackpanel.appendChild(text);
+           blackpanel.appendChild(geri);
+           blackpanel.appendChild(information);
+
+          }
+
+const asgaritutarhesapla= () =>
+{
+    data[i].asgaritutar=data[i].borc / 20;
+
+    bakiyebtn.remove();
+    borcbtn.remove();
+    asgaritutarbtn.remove();
+    nakitavansbtn.remove();
+    Bakiyesorgulabtn.remove();
+
+    let text=document.createElement("p");
+    text.classList.add("Walcome-text");
+    text.textContent="Borcunuzun asgari tutarı:"+data[i].asgaritutar+" TL ";
+    text.style.marginLeft="0.2em";
+    kartnumarasi.remove();
+    sifre.remove();
+    Kartno.remove();
+    Pass.remove();
+    girisbuton.remove();
+
+    let information=document.createElement("p");
+    information.classList.add("information");
+    information.textContent="Güle güle tekrar bekleriz";
+
+    blackpanel.appendChild(text);
+    blackpanel.appendChild(geri);
+    blackpanel.appendChild(information);
+
+
+}
+
+
            Bakiyesorgulabtn.addEventListener("click", bakiyesorgula);
+           borcbtn.addEventListener('click',Borcsorgula);
+           nakitavansbtn.addEventListener("click",Nakitavans);
+           asgaritutarbtn.addEventListener("click",asgaritutarhesapla);
          }
        else
        {
