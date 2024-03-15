@@ -221,7 +221,7 @@ function giris()
              {
               data[i].borc=data[i].borc-odemeyap.value;
               data[i].bakiye=data[i].bakiye-odemeyap.value;
-              text.textContent="Borç ödeme işlemi tamamlandı odenen borc : "+odemeyap.value+" TL "+" Kalan toplam borcunuz : "+data[i].borc+" TL ";
+              text.textContent="Borç ödeme işlemi tamamlandı odenen borc : "+odemeyap.value+" TL "+" Kalan toplam borcunuz : "+data[i].borc+" TL  ";
               if(data[i].borc==0)
               {
                text.textContent="Borcunuz tamamen odenmiştir artık borcunuz bulunmamaktadır";
