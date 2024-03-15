@@ -19,7 +19,8 @@ const data =[
         asgaritutar:0,
         nakitavans:0,
         kalankullanımhakkı:0,
-        nakitavanslimit:0
+        nakitavanslimit:0,
+        odenenborc:800
 
     }
 ]
@@ -84,9 +85,9 @@ function giris()
            
 
 
-           let  bakiyebtn=document.createElement("button");
-           bakiyebtn.classList.add("bakiyebtn");
-           bakiyebtn.textContent="Bakiye";
+           let  Kullanılabilirlimit=document.createElement("button");
+           Kullanılabilirlimit.classList.add("Kullanılabilirlimit");
+           Kullanılabilirlimit.textContent="Kullanılabilir limit";
 
            let  borcbtn=document.createElement("button");
            borcbtn.classList.add("borcbtn");
@@ -107,7 +108,7 @@ function giris()
 
 
            blackpanel.appendChild(text);
-           blackpanel.appendChild(bakiyebtn);
+           blackpanel.appendChild(Kullanılabilirlimit);
            blackpanel.appendChild(borcbtn);
            blackpanel.appendChild(asgaritutarbtn);
            blackpanel.appendChild(nakitavansbtn);
@@ -125,7 +126,7 @@ function giris()
 
            const bakiyesorgula = () => 
            {
-            bakiyebtn.remove();
+            Kullanılabilirlimit.remove();
             borcbtn.remove();
             asgaritutarbtn.remove();
             nakitavansbtn.remove();
@@ -170,7 +171,7 @@ function giris()
 
           const Borcsorgula=() =>
           {
-            bakiyebtn.remove();
+            Kullanılabilirlimit.remove();
             borcbtn.remove();
             asgaritutarbtn.remove();
             nakitavansbtn.remove();
@@ -217,7 +218,7 @@ function giris()
 
           const Nakitavans=() =>
           {
-            bakiyebtn.remove();
+            Kullanılabilirlimit.remove();
             borcbtn.remove();
             asgaritutarbtn.remove();
             nakitavansbtn.remove();
@@ -225,6 +226,8 @@ function giris()
 
             let text=document.createElement("p");
             text.classList.add("Walcome-text");
+            data[i].kalankullanımhakkı=data[i].borc-data[i].odenenborc;
+            data[i].nakitavans=data[i].kalankullanımhakkı;
             text.textContent="Nakit avans çekebileceğiniz miktar:"+data[i].nakitavans+" TL ";
             text.style.marginLeft="0.2em";
             kartnumarasi.remove();
@@ -233,37 +236,23 @@ function giris()
             Pass.remove();
             girisbuton.remove();
  
-           data[i].nakitavans=data[i].kalankullanımhakkı;
+          
+           let Paracek=document.createElement("input");
+           Paracek.classList.add("Paracek");
+           Paracek.type="Number";
+           Paracek.placeholder="Cekmek istediğiniz tutarı giriniz";
+           
 
-           let geri=document.createElement("button");
-           geri.classList.add("Geri");
-           geri.textContent="Çıkış yap";
-
-           let information=document.createElement("p");
-           information.classList.add("information");
-           information.textContent="Güle güle tekrar bekleriz";
-
-
-           const cikis=() => 
-           {
-            active ();
-                text.remove();
-                geri.remove();
-                information.remove();
-           }
-
-           geri.addEventListener('click',cikis);
            blackpanel.appendChild(text);
-           blackpanel.appendChild(geri);
-           blackpanel.appendChild(information);
-
+           blackpanel.appendChild(Paracek);
+     
           }
 
 const asgaritutarhesapla= () =>
 {
-    data[i].asgaritutar=data[i].borc / 20;
+    data[i].asgaritutar=(data[i].borc / 100)*20;
 
-    bakiyebtn.remove();
+    Kullanılabilirlimit.remove();
     borcbtn.remove();
     asgaritutarbtn.remove();
     nakitavansbtn.remove();
@@ -290,11 +279,32 @@ const asgaritutarhesapla= () =>
 
 }
 
+     const KullanılabilirlimitF=() => 
+     {
+      Kullanılabilirlimit.remove();
+      Bakiyesorgulabtn.remove();
+      nakitavansbtn.remove();
+      asgaritutarbtn.remove();
+      borcbtn.remove();
+
+      data[i].kalankullanımhakkı=data[i].borc-data[i].odenenborc;
+
+      let text=document.createElement("p");
+      text.classList.add("Walcome-text");
+      text.textContent="Kullanılabilirlimit:"+data[i].kalankullanımhakkı+" TL";
+       
+ 
+
+      
+      blackpanel.appendChild(text);
+     }
 
            Bakiyesorgulabtn.addEventListener("click", bakiyesorgula);
            borcbtn.addEventListener('click',Borcsorgula);
            nakitavansbtn.addEventListener("click",Nakitavans);
            asgaritutarbtn.addEventListener("click",asgaritutarhesapla);
+           Kullanılabilirlimit.addEventListener('click',KullanılabilirlimitF);
+           
          }
        else
        {

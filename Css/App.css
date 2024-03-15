@@ -9,8 +9,8 @@
     position:Absolute;
     top:10%;
     left:25%;
-    width:40%;
-    height:84%;
+    width:45%;
+    height:86%;
     background-color:black;
    
     border-radius:1.5em;
@@ -29,11 +29,11 @@
 .blackpanel
 {
     position:absolute;
-    width:247px;
-    height:12.6em;
+    width:270.5px;
+    height:12.4em;
     background-color:#E0FFFF;
-    left:32%;
-    top:38.5%;
+    left:32.9%;
+    top:39%;
     opacity:0.8;
   
 }
@@ -79,7 +79,7 @@
 .Walcome
 {
     position:absolute;
-    width:15.5em;
+    width:17em;
     height:12.6em;
     background-color:#87CEEB;
    
@@ -148,7 +148,7 @@
     font-weight:bolder;
     font-size:1.2em;
 }
-.bakiyebtn
+.Kullanılabilirlimit
 {
     position:absolute;
     top:49%;
@@ -160,7 +160,7 @@
     opacity:0.9;
     
 }
-.bakiyebtn:hover
+.Kullanılabilirlimit:hover
 {
     position:absolute;
     top:49%;
@@ -294,4 +294,39 @@
     color:black;
     top:0.2em;
     left:0.3em;
+}
+.Paracek
+{
+    position:absolute;
+    top:157%;
+    bottom:19%;
+    left:4%;
+    width:20em;
+    height:2.5em;
+    border-radius:0.5em;
+    background-color:#90EE90;
+    font-size:0.8em;
+}
+.onaybutton
+{
+    position:absolute;
+    width:3.5em;
+    height:3.5em;
+    background-color:darkcyan;
+    color:black;
+    border-radius:2.5px;
+    top:149%;
+    left:105%;
+
+}
+.onaybutton:hover
+{
+    position:absolute;
+    width:3.5em;
+    height:3.5em;
+    background-color:#90EE90;
+    color:black;
+    border-radius:2.5px;
+    top:149%;
+    left:105%;
 }
