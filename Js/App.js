@@ -20,8 +20,21 @@ const data =[
         nakitavans:0,
         kalankullanımhakkı:0,
         nakitavanslimit:0,
-        odenenborc:800
-
+        odenenborc:800,
+        hitap:"Bey"
+    },
+    {
+      Kartnumarası:"1234",
+        sifre:"1234",
+        isimsoyisim:"Elvan",
+        bakiye:4000,
+        borc:500,
+        asgaritutar:0,
+        nakitavans:0,
+        kalankullanımhakkı:0,
+        nakitavanslimit:0,
+        odenenborc:800,
+        hitap:"Hanım"
     }
 ]
 function active ()
@@ -67,8 +80,12 @@ Loginform.appendChild(Pass);
 
 function giris()
 {
+
     for(let i=0; i<data.length; i++)
     {
+     
+          adsoyad.textContent="Hoş geldiniz "+data[i].isimsoyisim +" "+data[i].hitap;
+      
 
          if(kartnumarasi.value==data[i].Kartnumarası && sifre.value==data[i].sifre)
          {
@@ -144,18 +161,9 @@ function giris()
 
 
 
-            let geri=document.createElement("button");
-            geri.classList.add("Geri");
-            geri.textContent="Çıkış yap";
-
-            let information=document.createElement("p");
-            information.classList.add("information");
-            information.textContent="Güle güle tekrar bekleriz";
-
+          
             blackpanel.appendChild(text);
-            blackpanel.appendChild(geri);
-            blackpanel.appendChild(information);
-
+           
 
               const geridon = () => 
               {
@@ -189,21 +197,49 @@ function giris()
 
 
 
-            let geri=document.createElement("button");
-            geri.classList.add("Geri");
-            geri.textContent="Çıkış yap";
 
-            let information=document.createElement("p");
-            information.classList.add("information");
-            information.textContent="Güle güle tekrar bekleriz";
+            let odemeyap=document.createElement("input");
+            odemeyap.classList.add("Paracek");
+            odemeyap.type="Number";
+            odemeyap.placeholder="Cekmek istediğiniz tutarı giriniz";
+ 
+ 
+            let onaybutton=document.createElement("button");
+            onaybutton.classList.add("onaybutton");
+            onaybutton.textContent="✓";
+ 
+            let inf=document.createElement("h4");
+            inf.classList.add("inf");
+            inf.textContent="Ödemek istediğiniz miktarı giriniz";
+ 
+ 
+ 
+ 
+            const islem= () => 
+            {
+             if(odemeyap.value<=data[i].borc)
+             {
+              data[i].borc=data[i].borc-odemeyap.value;
 
+              text.textContent="Borç ödeme işlemi tamamlandı odenen borc : "+odemeyap.value+" Kalan toplam borcunuz : "+data[i].borc;
+              if(data[i].borc==0)
+              {
+               text.textContent="Borcunuz tamamen odenmiştir artık borcunuz bulunmamaktadır";
+              }
+             }
+             else 
+             {
+               text.textContent="Fazla tutar girdiniz";
+             }
+             
+ 
+             blackpanel.appendChild(text);
+            }
+            onaybutton.addEventListener('click',islem);
             blackpanel.appendChild(text);
-            blackpanel.appendChild(geri);
-            blackpanel.appendChild(information);
-
-
-
-
+            blackpanel.appendChild(odemeyap);
+            blackpanel.appendChild(onaybutton);
+            blackpanel.appendChild(inf);
              const geridon = () => 
               {
                 active ();
@@ -241,10 +277,33 @@ function giris()
            Paracek.classList.add("Paracek");
            Paracek.type="Number";
            Paracek.placeholder="Cekmek istediğiniz tutarı giriniz";
-           
 
+
+           let onaybutton=document.createElement("button");
+           onaybutton.classList.add("onaybutton");
+           onaybutton.textContent="✓";
+
+           let inf=document.createElement("h4");
+           inf.classList.add("inf");
+           inf.textContent="Çekmek istediğiniz tutarı giriniz";
+
+
+
+
+           const islem= () => 
+           {
+            data[i].kalankullanımhakkı=data[i].borc-data[i].odenenborc;
+            data[i].kalankullanımhakkı=data[i].kalankullanımhakkı-Paracek.value;
+
+            text.textContent="Para çekme işlemi tamamlanmıştır cekilen ucret : "+Paracek.value+" TL | "+" Kalan kullanılabilir limit : "+data[i].kalankullanımhakkı+" TL |";
+
+            blackpanel.appendChild(text);
+           }
+           onaybutton.addEventListener('click',islem);
            blackpanel.appendChild(text);
            blackpanel.appendChild(Paracek);
+           blackpanel.appendChild(onaybutton);
+           blackpanel.appendChild(inf);
      
           }
 
@@ -304,13 +363,9 @@ const asgaritutarhesapla= () =>
            nakitavansbtn.addEventListener("click",Nakitavans);
            asgaritutarbtn.addEventListener("click",asgaritutarhesapla);
            Kullanılabilirlimit.addEventListener('click',KullanılabilirlimitF);
-           
+            return; 
          }
-       else
-       {
-        alert("Kart numarası ya da sifre hatalı");
-       
-       }
+      
     }
 }
 girisbuton.addEventListener('click',giris);
