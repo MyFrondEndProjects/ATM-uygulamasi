@@ -12,7 +12,7 @@ let adsoyad=document.querySelector(".isimsoyisim");
 const data =[
     {
         Kartnumarası:"123",
-        sifre:"123",
+        sifre:"Mustafa123",
         isimsoyisim:"Mustafa",
         bakiye:4000,
         borc:2000,
