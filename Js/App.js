@@ -84,12 +84,12 @@ function giris()
     for(let i=0; i<data.length; i++)
     {
      
-          adsoyad.textContent="Hoş geldiniz "+data[i].isimsoyisim +" "+data[i].hitap;
-      
+        
 
          if(kartnumarasi.value==data[i].Kartnumarası && sifre.value==data[i].sifre)
          {
-          
+          adsoyad.textContent="Hoş geldiniz "+data[i].isimsoyisim +" "+data[i].hitap;
+      
             walcomeimg.remove();
 
 
@@ -220,8 +220,8 @@ function giris()
              if(odemeyap.value<=data[i].borc)
              {
               data[i].borc=data[i].borc-odemeyap.value;
-
-              text.textContent="Borç ödeme işlemi tamamlandı odenen borc : "+odemeyap.value+" Kalan toplam borcunuz : "+data[i].borc;
+              data[i].bakiye=data[i].bakiye-odemeyap.value;
+              text.textContent="Borç ödeme işlemi tamamlandı odenen borc : "+odemeyap.value+" TL "+" Kalan toplam borcunuz : "+data[i].borc+" TL ";
               if(data[i].borc==0)
               {
                text.textContent="Borcunuz tamamen odenmiştir artık borcunuz bulunmamaktadır";
@@ -327,6 +327,8 @@ const asgaritutarhesapla= () =>
     Pass.remove();
     girisbuton.remove();
 
+
+  
     let information=document.createElement("p");
     information.classList.add("information");
     information.textContent="Güle güle tekrar bekleriz";
@@ -337,6 +339,8 @@ const asgaritutarhesapla= () =>
 
 
 }
+
+
 
      const KullanılabilirlimitF=() => 
      {
@@ -353,6 +357,9 @@ const asgaritutarhesapla= () =>
       text.textContent="Kullanılabilirlimit:"+data[i].kalankullanımhakkı+" TL";
        
  
+
+
+
 
       
       blackpanel.appendChild(text);
@@ -371,6 +378,8 @@ const asgaritutarhesapla= () =>
 girisbuton.addEventListener('click',giris);
 }
 
+   
+
 
 
 function Off()
@@ -385,9 +394,7 @@ function Off()
     
     location.reload();
 
-     
 }
-
 
 Onbutton.addEventListener('click',Off);
 Powerbutton.addEventListener('click',active);
